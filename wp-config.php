@@ -22,16 +22,16 @@
 $database = parse_url(getenv('DATABASE_URL') ? getenv('DATABASE_URL') : getenv('CLEARDB_DATABASE_URL'));
 
 /** The name of the database for WordPress */
-define('DB_NAME', trim($url['path'], '/'));
+define('DB_NAME', trim($database['path'], '/'));
 
 /** MySQL database username */
-define('DB_USER', $url['user']);
+define('DB_USER', $database['user']);
 
 /** MySQL database password */
-define('DB_PASSWORD', $url['pass']);
+define('DB_PASSWORD', $database['pass']);
 
 /** MySQL hostname */
-define('DB_HOST', $url['host']);
+define('DB_HOST', $database['host']);
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
